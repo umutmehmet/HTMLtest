@@ -231,4 +231,4 @@ Wir freuen uns über Feedback, Verbesserungsvorschläge und Praxiserfahrungen, u
 == Beispiel – PVS
 
 * KIM-Suche
-* Optional TI-M-Suche
+* Optional TI-M-Such
