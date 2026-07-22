@@ -63,12 +63,10 @@ Wir freuen uns über Feedback, Verbesserungsvorschläge und Praxiserfahrungen, u
 link:https://www.figma.com/proto/PnMNeqXL0LeZ3PCjusuY3f/VZD-im-PVS?node-id=553-23456&p=f&viewport=-2108%2C-612%2C0.1&t=Jnqa55IjrXhXcaRW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=553%3A23456&page-id=0%3A1[Klickdummy in Figma öffnen]
 
 ++++
-<iframe
-  style="border:1px solid rgba(0,0,0,.1);"
-  width="100%"
-  height="900"
-  src="https://embed.figma.com/proto/PnMNeqXL0LeZ3PCjusuY3f/VZD-im-PVS?node-id=553-23456&starting-point-node-id=553%3A23456&page-id=0%3A1&embed-host=share"
-  allowfullscreen>
+<iframe 
+style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
+src="https://embed.figma.com/proto/PnMNeqXL0LeZ3PCjusuY3f/VZD-im-PVS?node-id=553-23456&p=f&viewport=-5119%2C-2272%2C0.23&scaling=contain&content-scaling=fixed&starting-point-node-id=553%3A23456&page-id=0%3A1&embed-host=share"
+allowfullscreen>
 </iframe>
 ++++
 
