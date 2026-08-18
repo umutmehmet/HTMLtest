@@ -27,6 +27,7 @@ Ziel der Empfehlungen ist es:
 * Hohe Trefferqualität im Primärsystem zu erreichen, damit Nutzende schnell und zuverlässig die richtigen Einträge finden
 * Optimierte Darstellung der Suchergebnisse, um Nutzenden die Möglichkeit zu bieten durch gezielte Filterung oder Sortierung die Suchergebnisse nachgelagert zu durchsuchen
 * Technische Robustheit und Performance zu verbessern durch effiziente Anfragegestaltung und ressourcenschonende Suchstrategien, um Systemstabilität und Antwortzeiten auf einem hohen Niveau zu halten
+* TEST
 
 === Zielgruppe
 
