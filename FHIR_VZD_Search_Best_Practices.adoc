@@ -847,69 +847,69 @@ GET [baseUrl]/search/PractitionerRole
 
 ==== Allgemeine Suche und Bedienung
 
-* ❏ Volltextsuche und strukturierte Suche werden beide angeboten; Nutzende können wählen.
-* ❏ Mehrere Suchbegriffe lassen sich ohne Operatoren kombinieren.
-* ❏ Es werden nur Filter für Attribute gezeigt, die im VZD vorhanden sind.
-* ❏ Einheitliche und verständliche Filterbezeichnungen.
-* ❏ Lokale Liste zuletzt verwendeter Einträge / Favoriten (ohne VZD-Anfrage).
-* ❏ Suche startet erst ab 3 Zeichen und mit 300 ms Debounce. `[NEU, Vorschlag]`
-* ❏ Laufende Suchen sind abbrechbar.
+* Volltextsuche und strukturierte Suche werden beide angeboten; Nutzende können wählen.
+* Mehrere Suchbegriffe lassen sich ohne Operatoren kombinieren.
+* Es werden nur Filter für Attribute gezeigt, die im VZD vorhanden sind.
+* Einheitliche und verständliche Filterbezeichnungen.
+* Lokale Liste zuletzt verwendeter Einträge / Favoriten (ohne VZD-Anfrage).
+* Suche startet erst ab 3 Zeichen und mit 300 ms Debounce. `[NEU, Vorschlag]`
+* Laufende Suchen sind abbrechbar.
 
 ==== Transparenz der Suchlogik
 
-* ❏ UI zeigt, welche Attribute die Volltextsuche berücksichtigt (Info-Icon).
-* ❏ Hinweis vorhanden: Leistungserbringende besitzen meist keine KIM-Adresse.
-* ❏ Bei 0 Treffern werden konkrete nächste Schritte angeboten.
-* ❏ Bei sehr vielen Treffern wird zur Präzisierung angeleitet.
-* ❏ Trefferzahlen werden als Näherung dargestellt.
+* UI zeigt, welche Attribute die Volltextsuche berücksichtigt (Info-Icon).
+* Hinweis vorhanden: Leistungserbringende besitzen meist keine KIM-Adresse.
+* Bei 0 Treffern werden konkrete nächste Schritte angeboten.
+* Bei sehr vielen Treffern wird zur Präzisierung angeleitet.
+* Trefferzahlen werden als Näherung dargestellt.
 
 ==== Ergebnisdarstellung
 
-* ❏ Eindeutige Kennzeichnung LEI vs. LE, per Symbol *und* Text.
-* ❏ Filtermöglichkeit nach LEI / LE, Fachgruppe, Institutionstyp, Adressverfügbarkeit.
-* ❏ Ein Eintrag mit mehreren Adressen wird einmal angezeigt.
-* ❏ Favoriten-Funktion vorhanden.
-* ❏ Sortierung nach Name, Relevanz und – wo verfügbar – Entfernung.
+* Eindeutige Kennzeichnung LEI vs. LE, per Symbol *und* Text.
+* Filtermöglichkeit nach LEI / LE, Fachgruppe, Institutionstyp, Adressverfügbarkeit.
+* Ein Eintrag mit mehreren Adressen wird einmal angezeigt.
+* Favoriten-Funktion vorhanden.
+* Sortierung nach Name, Relevanz und – wo verfügbar – Entfernung.
 
 === Technische Implementierung
 
 ==== Suchlogik und Genauigkeit
 
-* ❏ Volltextsuche (`_text`) ist der Standardweg für Freitexteingaben.
-* ❏ Werte mit Sonderzeichen (Telematik-ID, Bindestrich, Punkt) werden in Anführungszeichen gesetzt.
-* ❏ Kommata werden vor dem Request entfernt oder ersetzt.
-* ❏ Fuzzy-Suche (`~`) ist als Eskalationsstufe implementiert, nicht als Standard.
-* ❏ Clientseitige Normalisierung („Str.“/„Straße“ -> „Str“).
-* ❏ Eingabevalidierung verhindert leere Treffer durch Tippfehler.
-* ❏ `_complexSearch=true` wird nur genutzt, wenn Operatoren tatsächlich gebraucht werden.
+* Volltextsuche (`_text`) ist der Standardweg für Freitexteingaben.
+* Werte mit Sonderzeichen (Telematik-ID, Bindestrich, Punkt) werden in Anführungszeichen gesetzt.
+* Kommata werden vor dem Request entfernt oder ersetzt.
+* Fuzzy-Suche (`~`) ist als Eskalationsstufe implementiert, nicht als Standard.
+* Clientseitige Normalisierung („Str.“/„Straße“ -> „Str“).
+* Eingabevalidierung verhindert leere Treffer durch Tippfehler.
+* `_complexSearch=true` wird nur genutzt, wenn Operatoren tatsächlich gebraucht werden.
 
 ==== Performance und Serverlast
 
-* ❏ Timeouts sind getrennt für Standard- und Umkreissuche konfiguriert.
+* Timeouts sind getrennt für Standard- und Umkreissuche konfiguriert.
 * {blank}
 +
 [NOTE]
 ====
-❏ Bei Abfragen möglichst komplexe OR-Ketten vermeiden.
+Bei Abfragen möglichst komplexe OR-Ketten vermeiden.
 ====
-* ❏ `_include` wird gezielt verwendet; `_include=*` nur in Detailansichten.
-* ❏ Retry-Strategie mit Backoff ist definiert.
+* `_include` wird gezielt verwendet; `_include=*` nur in Detailansichten.
+* Retry-Strategie mit Backoff ist definiert.
 
 ==== Datenqualität und VZD-Konformität
 
-* ❏ Nur Ressourcen mit `active=true` werden angezeigt.
-* ❏ Auch verknüpfte Ressourcen werden geprüft (`endpoint.status=active`).
-* ❏ Beim Direktzugriff über `[id]` erfolgt die Aktiv-Prüfung clientseitig.
-* ❏ `total` wird nicht als exakte Trefferzahl interpretiert.
-* ❏ Getestete VZD-FHIR-Version ist dokumentiert.
+* Nur Ressourcen mit `active=true` werden angezeigt.
+* Auch verknüpfte Ressourcen werden geprüft (`endpoint.status=active`).
+* Beim Direktzugriff über `[id]` erfolgt die Aktiv-Prüfung clientseitig.
+* `total` wird nicht als exakte Trefferzahl interpretiert.
+* Getestete VZD-FHIR-Version ist dokumentiert.
 
 ==== Sicherheit und Schnittstellen
 
-* ❏ Kommunikation vollständig über TLS ohne Zertifikats-Pinning.
-* ❏ Authentifizierung über OAuth2-Access-Token; zentrales Token-Handling.
-* ❏ Eingabeparameter werden korrekt kodiert und escaped.
-* ❏ Ratenbegrenzung gegen automatisiertes Abziehen des VZD ist vorhanden.
-* ❏ Keine personenbezogenen Suchinhalte in Logs.
+* Kommunikation vollständig über TLS ohne Zertifikats-Pinning.
+* Authentifizierung über OAuth2-Access-Token; zentrales Token-Handling.
+* Eingabeparameter werden korrekt kodiert und escaped.
+* Ratenbegrenzung gegen automatisiertes Abziehen des VZD ist vorhanden.
+* Keine personenbezogenen Suchinhalte in Logs.
 
 == Anhang
 
