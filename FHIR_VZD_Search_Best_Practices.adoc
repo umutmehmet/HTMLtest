@@ -30,7 +30,7 @@ Zugleich hängt die tatsächliche Funktionalität der Suche maßgeblich von der 
 
 Daher beschreibt dieses Dokument Best Practices und Implementierungstipps für Hersteller, um eine effiziente und nutzerfreundliche VZD-Suche sicherzustellen.
 
-Mit dieser Anpassung der Suche in Primärsystemen erfolgt gleichzeitig die notwendige Umstellung der Suchfunktionalitäten auf den FHIR-basierten Verzeichnisdienst (FHIR-VZD). Die hierin beschriebenen Best Practices und Implementierungsempfehlungen sollen Hersteller dabei unterstützen, diese Migration erfolgreich umzusetzen und die erweiterten Möglichkeiten des FHIR-VZD für eine leistungsfähige, nutzerfreundliche und standardkonforme Suche optimal zu nutzen. Das Dokument dient damit sowohl als Orientierung für die fachliche und technische Optimierung der Suche als auch als Leitfaden für die Umstellung auf die neue VZD-Technologie.
+Mit dieser Anpassung der Suche in Primärsystemen erfolgt gleichzeitig die  Umstellung der Suchfunktionalitäten auf den FHIR-basierten Verzeichnisdienst (FHIR-VZD). Die hierin beschriebenen Best Practices und Implementierungsempfehlungen sollen Hersteller dabei unterstützen, diese Migration erfolgreich umzusetzen und die erweiterten Möglichkeiten des FHIR-VZD für eine leistungsfähige, nutzerfreundliche und standardkonforme Suche optimal zu nutzen. Das Dokument dient damit sowohl als Orientierung für die fachliche und technische Optimierung der Suche als auch als Leitfaden für die Umstellung auf die neue VZD-Technologie.
 
 Ziel dieses Dokuments ist es:
 
