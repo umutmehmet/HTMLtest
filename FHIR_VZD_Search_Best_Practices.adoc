@@ -8,6 +8,8 @@
 :experimental:
 :imagesdir: .
 
+
+
 [cols="1,3"]
 |===
 | Version | 2.0.0-Entwurf
@@ -199,7 +201,7 @@ An `/search` und `/fdv/search` dürfen nur Ergebnisse verwendet werden, für die
 
 *Minimalvarianten der Suche*
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/HealthcareService?organization.active=true
 GET [baseUrl]/search/PractitionerRole?practitioner.active=true
@@ -250,7 +252,7 @@ Ein großer Teil der berichteten Fehltreffer entsteht *vor* dem Request. Empfohl
 
 *Beispiel einer Normalisierung*
 
-[source,http]
+[source,text]
 ----
 Eingabe:     "Dr. Müller, Hauptstraße 12, 10115 Berlin"
 Normalisiert: Müller Hauptstr 12 10115 Berlin
@@ -357,7 +359,7 @@ Zwei Effekte führen regelmäßig zu unerwartet leeren Trefferlisten:
 
 *Beispiele*
 
-[source,http]
+[source,text]
 ----
 # AND – beide Begriffe müssen vorkommen
 _text=Berlin+"Kardiologie"
@@ -388,7 +390,7 @@ Der OR-Operator verschlechtert die Suchperformance spürbar und sollte vermieden
 
 Drei funktionierende Alternativen:
 
-[source,http]
+[source,text]
 ----
 # 1) Getrennt gequotete Begriffe ohne Komma
 _text="Musterweg 10" "10178" "Berlin" +Mustermann&_complexSearch=true
@@ -438,7 +440,7 @@ Findet aucht "Bessinger Straße 42"
 
 Beide Ansätze lassen sich kombinieren – das ist der empfohlene Normalfall für Filter, die nicht im Index liegen.
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/HealthcareService
     ?organization.active=true
@@ -484,7 +486,7 @@ Wenn ein Code in mehreren CodeSystemen vorkommt, kann er mit System qualifiziert
 
 Ohne `_include` enthält das Bundle nur den Ressourcentyp der Suche – Name, Adresse und KIM-Adresse fehlen dann und müssten einzeln nachgeladen werden.
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/PractitionerRole
     ?practitioner.active=true
@@ -501,14 +503,14 @@ GET [baseUrl]/search/PractitionerRole
 
 Variante A – Referenz aus dem Treffer auflösen:
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/Endpoint/c6ca0089-d2ea-40c2-ae54-966020ad2668
 ----
 
 Variante B – alle aktiven Endpunkte zu einem bekannten Eintrag:
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/Endpoint
     ?status=active
@@ -523,7 +525,7 @@ In beiden Varianten prüft der Dienst *nicht*, ob die referenzierende Organisati
 
 === Trefferanzahl und Seitenweise Verarbeitung
 
-[source,http]
+[source,text]
 ----
 # Nur die Anzahl ermitteln
 GET [baseUrl]/search/PractitionerRole?practitioner.active=true&_summary=count
@@ -545,7 +547,7 @@ GET [baseUrl]/search/PractitionerRole?practitioner.active=true&_summary=count
 
 === Variante 1: Suchparameter `location.near`
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/HealthcareService
     ?organization.active=true
@@ -579,7 +581,7 @@ Diese Operationen an `/fdv/search` liefern nach Entfernung *sortierte* Ergebniss
 |`organization.type` |Nur bei `_query=near`: Organisationstyp |nein
 |===
 
-[source,http]
+[source,text]
 ----
 
 GET {{fhir_server}}/fdv/search/HealthcareService?_query=nearPharmacy
@@ -812,7 +814,7 @@ image::images/click-dummy.png[Click-Dummy VZD-Suche im PVS,800]
 |5 |Eintrag als Favorit speichern
 |===
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/HealthcareService
     ?organization.active=true
@@ -829,7 +831,7 @@ GET [baseUrl]/search/HealthcareService
 
 *Ausgangssituation:* Ein Arzt sucht eine Kollegin für einen Chat über den TI-Messenger.
 
-[source,http]
+[source,text]
 ----
 GET [baseUrl]/search/PractitionerRole
     ?practitioner.active=true
