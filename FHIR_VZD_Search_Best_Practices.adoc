@@ -58,7 +58,7 @@ Dazu gehören Hersteller von Praxissoftware (AVS, PVS, KIS)
 [width="100%",cols="44%,33%,23%",options="header",]
 |===
 |Dokument |Inhalt |Verhältnis zu diesem Dokument
-|https://gemspec.gematik.de/docs/gemSpec/gemSpec_VZD_FHIR_Directory/latest/[`gemSpec_VZD_FHIR_Directory` |Normative Spezifikation des Dienstes (Anforderungen an Hersteller und Anbieter des VZD) |Verbindlich. Dieses Dokument macht keine abweichenden Vorgaben.
+|https://gemspec.gematik.de/docs/gemSpec/gemSpec_VZD_FHIR_Directory/latest/[`gemSpec_VZD_FHIR_Directory`] |Normative Spezifikation des Dienstes (Anforderungen an Hersteller und Anbieter des VZD) |Verbindlich. Dieses Dokument macht keine abweichenden Vorgaben.
 |`gemILF_VZD_FHIR_Directory` |Implementierungsleitfaden für Clients |Verbindliche Grundlage für die Anbindung.
 |`FHIR_VZD_HOWTO_Search.adoc` |Technische Referenz der Suchschnittstelle inkl. Beispielrequests |*Primäre technische Quelle.* Dieses Dokument verweist darauf und ergänzt Empfehlungen zur Anwendung.
 |`FHIR_VZD_HOWTO_Authenticate.adoc` |Beschaffung von `searchaccess_token` bzw. Token für `/fdv/search` |Voraussetzung für alle hier gezeigten Beispiele.
