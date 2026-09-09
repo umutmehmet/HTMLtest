@@ -96,9 +96,10 @@ Wir freuen uns über Feedback, Verbesserungsvorschläge und Praxiserfahrungen, u
 |LE |Leistungserbringende (natürliche Person), im FHIR-VZD abgebildet über `Practitioner` / `PractitionerRole`
 |LEI |Leistungserbringerinstitution (Organisation), abgebildet über `Organization` / `HealthcareService`
 |Telematik-ID |Eindeutige Kennung eines Eintrags, z. B. `1-200-876000052`
+|`/fdv/search` |Suchschnittstelle für Versichertenfrontends (FdV)
+|`/search` |Suchschnittstelle für Nutzung durch Primärsysteme
 |Endpoint |FHIR-Ressource, die eine Kommunikationsadresse trägt (z. B. KIM-Adresse, TI-M-Adresse)
 |`_text` |Volltext-Suchparameter über die indexierten Attribute der verknüpften Ressourcen
-|`/fdv/search` |Suchschnittstelle für Versichertenfrontends (FdV) sowie für Nutzung durch Primärsysteme
 |Fuzzy-Suche |Unscharfe Suche auf Basis der Levenshtein-Distanz (`~`)
 |===
 
@@ -159,19 +160,7 @@ Für jeden Suchaufruf wird ein gültiges Access-Token benötigt (`searchaccess_t
 * Genau *einen* Retry nach Token-Erneuerung bei HTTP 401; danach mit verständlicher Meldung abbrechen.
 * Token niemals im Log, in URL-Parametern oder in Crash-Reports ausgeben.
 
-*Beispiel: Ablaufsteuerung (Pseudocode)*
 
-[source,text]
-----
-if (token == null || token.expiresInSeconds() < 60) {
-    token = authService.fetchSearchAccessToken();   // siehe HOWTO_Authenticate
-}
-response = http.get(searchUrl, bearer(token));
-if (response.status == 401) {
-    token = authService.fetchSearchAccessToken();   // genau ein Retry
-    response = http.get(searchUrl, bearer(token));
-}
-----
 
 === Die vier Zugriffswege im Überblick
 
