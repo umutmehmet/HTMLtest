@@ -118,7 +118,7 @@ image::click-dummy.png[Click-Dummy VZD-Suche im PVS,800]
 |Schnittstelle |Zweck |Typische Nutzer
 |`/search` |Suche nach Organisationen und Personen für TI-Anwendungen |TI-Messenger
 |`/fdv/search` |Suche für Frontends des Versicherten, inkl. optimierter Umkreis-Operationen |ePA-App, E-Rezept-App, PVS, AVS, KIS,
-|`/kim/search` |In Definition, geplant für VZD FHIR 1.2.0-18 |
+|`/kim/search` |In Definition, geplant für VZD FHIR 1.2.0-19 |
 |`/owner` |Pflege eigener Einträge (Servicedaten) |AVS, Self-Service-Portal
 |===
 
@@ -141,7 +141,7 @@ Für die Suche sind zwei Einstiegsressourcen relevant:
 |Suchziel |Einstiegsressource |Verknüpfte Ressourcen (über `_include`)
 |Institution (LEI) |`HealthcareService` |`Organization`, `Location`, `Endpoint`
 |Person (LE) |`PractitionerRole` |`Practitioner`, `Location`, `Endpoint`
-|Kommunikationsadresse |`Endpoint` |über `_revinclude` / `_has` auflösbar
+|Kommunikationsadressen |`Endpoint` |über `_revinclude` / `_has` auflösbar
 |===
 
 [IMPORTANT]
@@ -203,7 +203,7 @@ Beim Direktzugriff über `[id]` erfolgt *keinerlei* Aktiv-Prüfung durch den Die
 
 [NOTE]
 ====
-*Neues Kapitel.* Es beantwortet die in Interviews am häufigsten gestellte Frage: „Welche Suche nehme ich wann?“ Beispielhafte Ausgestaltung – die Schwellenwerte sind Vorschläge.
+Dieses Kapitle beantwortet die in Interviews am häufigsten gestellte Frage: „Welche Suche nehme ich wann?“ Beispielhafte Ausgestaltung.
 ====
 
 === Entscheidungshilfe
@@ -263,11 +263,6 @@ Die Fuzzy-Suche darf *nicht* der Standardfall sein: Sie erzeugt viele, teils irr
 ====
 
 == Volltextsuche im Detail
-
-[NOTE]
-====
-*Neues Kapitel.* Kernstück der technischen Ergänzung. Die Beispiele sind an die gematik-Dokumentation angelehnt und sollten gegen die aktuelle VZD-FHIR-Version nachgetestet werden.
-====
 
 === Was im Volltext durchsucht wird
 
@@ -523,7 +518,7 @@ GET [baseUrl]/search/PractitionerRole?practitioner.active=true&_summary=count
 
 [NOTE]
 ====
-*Neues Kapitel.* Relevant für ePA-/E-Rezept-Apps sowie für die Sortierung nach Entfernung, die in Kapitel 10 empfohlen wird.
+*Neues Kapitel.* Relevant für ePA-/E-Rezept-Apps sowie für die Sortierung nach Entfernung.
 ====
 
 === Variante 1: Suchparameter `location.near`
