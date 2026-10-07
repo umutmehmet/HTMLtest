@@ -1,5 +1,5 @@
 # Der Implementierungsleitfaden ist nun an einem neuen Ort!
-Bitte öffnen Sie https://umutmehmet.github.io/ILF_BestPractice_Suche/
+Bitte öffnen Sie [https://umutmehmet.github.io/ILF_BestPractice_Suche/]https://umutmehmet.github.io/ILF_BestPractice_Suche/
 
 Vielen Dank!
 
